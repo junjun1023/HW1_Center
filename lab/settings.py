@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -77,6 +77,9 @@ WSGI_APPLICATION = 'lab.wsgi.application'
 
 DATABASES = {
     'default': {
+        
+    },
+    'movie': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'movie',
         'USER':'root',
@@ -98,7 +101,7 @@ DATABASES = {
 }
 
 DATABASE_APPS_MAPPING = { 
-    'Movie': 'default', 
+    'Movie': 'movie', 
     'Recommendation': 'recommendation' 
 } 
 

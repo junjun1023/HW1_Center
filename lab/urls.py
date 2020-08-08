@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Movie import views as movie_views
+from Recommendation import views as rec_views
+from Classifier import views as classifier_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', movie_views.get_rating_list),
+    path('insert/', movie_views.insert_rating_list),
+    path('delete/', movie_views.delete_rating_record),
+    path('recommendation/', rec_views.recommend),
+    path('classifier/', classifier_views.classify)
 ]
+
